@@ -1,0 +1,16 @@
+<canvas width="600" height="400"></canvas>
+<script>
+	function quadroVerde(x, y, cor){
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+	pincel.fillStyle = cor;
+	pincel.fillRect(x, y,50, 50);
+	pincel.strokeStyle = "black";
+	pincel.strokeRect(x, y,50, 50);
+
+}
+quadroVerde(0,0,"red");
+quadroVerde(50,50,"blue");
+
+</script>

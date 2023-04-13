@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+<script>
+    function p() {
+        document.write("<br>");
+    }
+    function mostra(frase) {
+        document.write(frase);
+        p();
+    }
+    var senha = prompt("senha é");
+
+    
+    if(senha == "italo") { 
+
+        var vitorias = parseInt(prompt("Os número de vitorias são ?"));
+        var empates = parseInt(prompt("Os número de empates são ?"));
+        var pontos = vitorias * 3 + empates;
+
+    
+        mostra("a pontuação é de " + pontos);
+        p();
+        var golsp = parseInt(prompt("Os numero de gols marcados?"));
+
+        var golsc = parseInt(prompt("Os numero de gols sofridos?"));
+
+        var saldoGols = golsp - golsc;
+        mostra("Com saldo de " + saldoGols);
+
+        var pontosp = 63
+        var saldoGolsp = 39
+
+        if(pontosp == pontos) {
+
+            mostra("Esse ano foi feito os mesmos " + (pontos) + " pontos");
+        
+        }
+        if(pontosp > pontos) {
+
+            mostra("Esse ano foi feito menos pontos ");
+        
+        }
+        if(pontosp > pontos && pontos < 40) {
+            mostra("rebaixado");
+            }
+        if(pontosp < pontos) {
+            mostra("Esse ano foi feito mais pontos ");
+        }        
+        if(saldoGols == saldoGolsp) {
+            mostra("Esse ano foi feito os mesmos " + (saldoGols) + " de saldo");
+        }
+        if(saldoGols > saldoGolsp) {
+            mostra("Esse ano foi feito mais saldo ");
+        }
+        if(saldoGols < saldoGolsp) {
+            mostra("Esse ano foi feito menos saldo ");
+    }  
+        var mediaDeGols = Math.round(Math.random() * 100);
+
+        if(saldoGols > mediaDeGols) {
+        mostra("Seu time está com o maior nume de gols o segundo esta com "+ mediaDeGols)
+    }
+    } else {
+        mostra("errou");
+    }
+</script>

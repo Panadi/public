@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<script>
+    function p() {
+        document.write("<br>");
+    }
+    function mostra(frase) {
+        document.write(frase);
+        p();
+    }
+    var usuarioCadastrado = "italo";
+    var senhaCadastrada = "123";
+
+    var usuarioInformado = prompt("qual seu usario ?");
+    var senhaInformada = prompt("qual sua senha ?");
+ 
+    if(usuarioCadastrado == usuarioInformado && senhaCadastrada == senhaInformada){
+        mostra("Bem vindo");
+    }else{
+        mostra("Erro");
+    }
+</script>
