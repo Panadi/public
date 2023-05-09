@@ -8,7 +8,7 @@ numero_aleatorio = random.randint(1, 10)
 
 while(tentativas <= 4):
     try:
-        chute = int(input(f"Essa é a {tentativas} tentativa digite seu chute:"))
+        chute = int(input("Essa é a {} tentativa digite seu chute:".format(tentativas)))
     except ValueError:
        erro1 = 1
        print("Por favor digite um numero inteiro.") 
@@ -20,7 +20,7 @@ while(tentativas <= 4):
      print()
     else:
         if(acerto):
-         print("Acertou!!")
+         print(f"Acertou!!na {tentativas}° tentativa")
          break
         elif(maior):
            print("Errou! você escolheu um numero maior")
