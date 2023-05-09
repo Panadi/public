@@ -2,22 +2,29 @@ import random
 print("**************")
 print("Bem vindo ao teste")
 print("**************")
-
+tentativas = 0
 erro1 = 0
 numero_aleatorio = random.randint(1, 10)
-try:
-    chute = int(input("digite seu chute:"))
-except ValueError:
-    erro1 = 1
-    print("Por favor digite um numero inteiro.")
 
-if(erro1 == 1):
-   print()
-else:
-    if(numero_aleatorio == chute):
-     print("Acertou!!")
+while(tentativas <= 4):
+    try:
+        chute = int(input("digite seu chute:"))
+    except ValueError:
+       erro1 = 1
+       print("Por favor digite um numero inteiro.")
+    acerto = chute == numero_aleatorio 
+    maior = chute > numero_aleatorio 
+    menor = chute < numero_aleatorio 
 
+    if(erro1 == 1):
+     print()
     else:
-     print("Errou! O numero é "+ str(numero_aleatorio))
-
+        if(acerto):
+         print("Acertou!!")
+         break
+        elif(maior):
+           print("Errou! você escolheu um numero maior")
+        elif(menor):
+           print("Errou! você escolheu um numero menor")
+    tentativas += 1
 print("FIM")
