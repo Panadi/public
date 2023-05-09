@@ -2,16 +2,16 @@ import random
 print("**************")
 print("Bem vindo ao teste")
 print("**************")
-tentativas = 0
+tentativas = 1
 erro1 = 0
 numero_aleatorio = random.randint(1, 10)
 
 while(tentativas <= 4):
     try:
-        chute = int(input("digite seu chute:"))
+        chute = int(input(f"Essa é a {tentativas} tentativa digite seu chute:"))
     except ValueError:
        erro1 = 1
-       print("Por favor digite um numero inteiro.")
+       print("Por favor digite um numero inteiro.") 
     acerto = chute == numero_aleatorio 
     maior = chute > numero_aleatorio 
     menor = chute < numero_aleatorio 
