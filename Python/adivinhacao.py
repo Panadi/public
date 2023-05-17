@@ -5,18 +5,23 @@ print("Bem vindo ao teste")
 print("**************")
 
 
-numero_aleatorio = random.randint(1, 10)
+numero_aleatorio = random.randint(1, 100)
 erro1 = 0
 nv_max = 3
 nv_min = 1
-pontuacao = 1000
+pontos_iniciais = 1000
 
-def adivinhacao(total_tentativas, pontuacao):
+def adivinhacao(total_tentativas, pontos_iniciais):
     tentativas = 1
+    pontos = pontos_iniciais
     while(tentativas <= total_tentativas):
+        
         erro1 = 0
         try:
             chute = int(input("Essa é a {} tentativa digite seu chute:".format(tentativas)))
+            if (chute <= 0 or chute > 100):
+             print("escolha o valor entre 1 e 100")
+             
         except ValueError:
             erro1 = 1
             print("Por favor digite um numero inteiro.") 
@@ -29,16 +34,16 @@ def adivinhacao(total_tentativas, pontuacao):
          print()
         else:
          if(acerto):
-          print(f"Acertou!!na {tentativas}° tentativa.")
+          print(f"Acertou!!na {tentativas}° tentativa e fez {pontos} pontos")
           break
          elif(maior):
            print("Errou! você escolheu um numero maior.")
-           pontuacao -= 10
          elif(menor):
            print("Errou! você escolheu um numero menor.")
-           pontuacao -= 10
         tentativas += 1
-        return pontuacao
+        pontos_perdidos = abs(numero_aleatorio - chute)
+        pontos = pontos - pontos_perdidos                        
+              
 def nivel():
     try:
         nivel = int(input("Escolha o nivel de 1 à 3:"))
@@ -55,7 +60,5 @@ def chances(nivel):
    return total_tentativas
 
 total_tentativas = chances(nivel())
-adivinhacao(total_tentativas,pontuacao)
-pontuacao_final = adivinhacao(total_tentativas, pontuacao)
-print("Sua pontuação final é: ", pontuacao_final)
+adivinhacao(total_tentativas, pontos_iniciais)
 print("FIM")
