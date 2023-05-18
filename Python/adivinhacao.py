@@ -66,3 +66,5 @@ def jogar():
     total_tentativas = chances(nivel())
     adivinhacao(total_tentativas, pontos_iniciais)
     print("FIM")
+if (__name__ == "__main__"):
+   jogar()
