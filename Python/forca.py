@@ -13,7 +13,7 @@ def jogar():
     acertou = False
     letras_acertadas = ["_"] * len(palavra_secreta)
     letras_erradas = []
-    print(letras_acertadas)
+    erros = 6
     while(not acertou and not enforcou):
         print("Jogando...")
         
@@ -25,14 +25,22 @@ def jogar():
         else:
           index = 0
           for letra in palavra_secreta:
-              if (chute.upper == letra.upper):
-                letras_acertadas[index] = letra
-                print(f"Acertou a letra {chute}, na posição {index}")
-              index += 1           
-          print(letras_acertadas) 
+            if (chute.upper == letra.upper):
+              letras_acertadas[index] = letra
+              print(f"Acertou a letra {chute}, na posição {index}")
+            index += 1           
+          
+          else:
+              print("A palavra não possui essa letra")
+              erros -= 1
+          if erros == 0:
+            enforcou = True
+            print("enforcado")
           if "_" not in letras_acertadas:
-                acertou = True
-                print("Você descobriu a palavra!!!!")         
+            acertou = True
+            print("Você descobriu a palavra!!!!") 
+          print(letras_acertadas)
+
     print("Fim do jogo")
 
 if (__name__ == "__main__"):
