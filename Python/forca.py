@@ -11,7 +11,7 @@ def jogar():
     palavra_secreta = "banana"
     enforcou = False
     acertou = False
-    letras_acertadas = ["_"] * len(palavra_secreta)
+    letras_acertadas = ["_" for letra in palavra_secreta] 
     letras_erradas = []
     erros = 6
     while(not acertou and not enforcou):
